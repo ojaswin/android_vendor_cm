@@ -123,6 +123,16 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# Add CameraNext
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/apps/CN/CameraNext.apk:system/priv-app/CN/CameraNext.apk \
+    vendor/cm/prebuilt/common/apps/CN/lib/arm/libjni_mosaic_next.so:system/priv-app/CameraNext/lib/arm/libjni_mosaic_next.so \
+    vendor/cm/prebuilt/common/apps/CN/lib/arm/libjni_tinyplanet_next.so:system/priv-app/CameraNext/lib/arm/libjni_tinyplanet_next.so
+
+# Add KernelAdiutorMod
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/apps/KernelAdiutorMod.apk:system/priv-app/KernelAdiutorMod/KernelAdiutorMod.apk
+
 # Theme engine
 include vendor/cm/config/themes_common.mk
 
@@ -154,9 +164,8 @@ PRODUCT_PACKAGES += \
     AudioFX \
     CMWallpapers \
     CMFileManager \
-    Eleven \
     LockClock \
-    CMUpdater \
+    Eleven \
     CyanogenSetupWizard \
     CMSettingsProvider \
     ExactCalculator \
@@ -238,7 +247,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
+    persist.sys.root_access=3
 
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
@@ -261,6 +270,8 @@ ifndef CM_BUILDTYPE
         CM_BUILDTYPE := $(RELEASE_TYPE)
     endif
 endif
+
+CM_BUILDTYPE := ojaswin
 
 # Filter out random types, so it'll reset to UNOFFICIAL
 ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(CM_BUILDTYPE)),)
@@ -315,9 +326,11 @@ ifeq ($(CM_BUILDTYPE), RELEASE)
         endif
     endif
 else
-    ifeq ($(CM_VERSION_MAINTENANCE),0)
+    ifeq ($(PRODUCT_VERSION_MINOR),0)
+        CM_BUILDTYPE := ojaswin
         CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)$(CM_EXTRAVERSION)-$(CM_BUILD)
     else
+        CM_BUILDTYPE := ojaswin
         CM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(CM_VERSION_MAINTENANCE)-$(shell date -u +%Y%m%d)-$(CM_BUILDTYPE)$(CM_EXTRAVERSION)-$(CM_BUILD)
     endif
 endif
