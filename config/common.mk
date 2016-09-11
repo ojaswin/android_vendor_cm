@@ -137,6 +137,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/TugaBrowser/base.apk:system/app/TugaBrowser/base.apk
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+   vendor/cm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+   vendor/cm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Theme engine
 include vendor/cm/config/themes_common.mk
 
