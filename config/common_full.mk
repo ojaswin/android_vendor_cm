@@ -1,3 +1,4 @@
+
 # Inherit common CM stuff
 $(call inherit-product, vendor/cm/config/common.mk)
 
@@ -8,13 +9,8 @@ include vendor/cm/config/cm_audio.mk
 
 # Optional CM packages
 PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
     LiveWallpapers \
     LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
     PhotoTable \
     SoundRecorder \
     PhotoPhase \

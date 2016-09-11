@@ -125,13 +125,17 @@ PRODUCT_COPY_FILES += \
 
 # Add CameraNext
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/apps/CN/CameraNext.apk:system/priv-app/CN/CameraNext.apk \
-    vendor/cm/prebuilt/common/apps/CN/lib/arm/libjni_mosaic_next.so:system/priv-app/CameraNext/lib/arm/libjni_mosaic_next.so \
-    vendor/cm/prebuilt/common/apps/CN/lib/arm/libjni_tinyplanet_next.so:system/priv-app/CameraNext/lib/arm/libjni_tinyplanet_next.so
+    vendor/cm/prebuilt/common/app/CN/CameraNext.apk:system/priv-app/CN/CameraNext.apk \
+    vendor/cm/prebuilt/common/app/CN/lib/arm/libjni_mosaic_next.so:system/priv-app/CameraNext/lib/arm/libjni_mosaic_next.so \
+    vendor/cm/prebuilt/common/app/CN/lib/arm/libjni_tinyplanet_next.so:system/priv-app/CameraNext/lib/arm/libjni_tinyplanet_next.so
 
 # Add KernelAdiutorMod
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/apps/KernelAdiutorMod.apk:system/priv-app/KernelAdiutorMod/KernelAdiutorMod.apk
+    vendor/cm/prebuilt/common/app/KernelAdiutorMod.apk:system/app/KernelAdiutorMod/KernelAdiutorMod.apk
+
+# TugaBrowser
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/TugaBrowser/base.apk:system/app/TugaBrowser/base.apk
 
 # Theme engine
 include vendor/cm/config/themes_common.mk
@@ -166,8 +170,8 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     LockClock \
     Eleven \
-    CyanogenSetupWizard \
     CMSettingsProvider \
+    CyanogenSetupWizard \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
