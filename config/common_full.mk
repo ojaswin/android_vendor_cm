@@ -4,31 +4,18 @@ $(call inherit-product, vendor/cm/config/common.mk)
 
 PRODUCT_SIZE := full
 
-# Include CM audio files
-include vendor/cm/config/cm_audio.mk
-
 # Optional CM packages
 PRODUCT_PACKAGES += \
     LiveWallpapers \
+<<<<<<< HEAD
     LiveWallpapersPicker \
+=======
+    MagicSmokeWallpapers \
+    NoiseField \
+    PhaseBeam \
+>>>>>>> 827bd9eb0af8b3631003a0736c666dbc55569d84
     PhotoTable \
-    SoundRecorder \
-    PhotoPhase \
-    Screencast
-
-# Extra tools in CM
-PRODUCT_PACKAGES += \
-    7z \
-    lib7z \
-    bash \
-    bzip2 \
-    curl \
-    powertop \
-    unrar \
-    unzip \
-    vim \
-    wget \
-    zip
+    PhotoPhase
 
 # Themes
 PRODUCT_PACKAGES += \

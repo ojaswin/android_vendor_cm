@@ -63,6 +63,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Default notification/alarm sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Helium.ogg
+
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
@@ -123,6 +128,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+<<<<<<< HEAD
 # Add CameraNext
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/CN/CameraNext.apk:system/priv-app/CN/CameraNext.apk \
@@ -141,6 +147,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    vendor/cm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/cm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+=======
+# Include CM audio files
+include vendor/cm/config/cm_audio.mk
+>>>>>>> 827bd9eb0af8b3631003a0736c666dbc55569d84
 
 # Theme engine
 include vendor/cm/config/themes_common.mk
@@ -160,7 +170,8 @@ PRODUCT_PACKAGES += \
 # Optional CM packages
 PRODUCT_PACKAGES += \
     libemoji \
-    Terminal
+    Terminal \
+    LiveWallpapersPicker
 
 # Include librsjni explicitly to workaround GMS issue
 PRODUCT_PACKAGES += \
@@ -181,7 +192,9 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider \
     DataUsageProvider \
-    WallpaperPicker
+    WallpaperPicker \
+    SoundRecorder \
+    Screencast
 
 # Exchange support
 PRODUCT_PACKAGES += \
@@ -202,7 +215,18 @@ PRODUCT_PACKAGES += \
     oprofiled \
     sqlite3 \
     strace \
-    pigz
+    pigz \
+    7z \
+    lib7z \
+    bash \
+    bzip2 \
+    curl \
+    powertop \
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
 
 # Custom off-mode charger
 ifneq ($(WITH_CM_CHARGER),false)
