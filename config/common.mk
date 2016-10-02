@@ -128,10 +128,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
-<<<<<<< HEAD
 # Add CameraNext
 PRODUCT_COPY_FILES += \
-    vendor/cm/prebuilt/common/app/CN/CameraNext.apk:system/priv-app/CN/CameraNext.apk \
+    vendor/cm/prebuilt/common/app/CN/CameraNext.apk:system/priv-app/CameraNext/CameraNext.apk \
     vendor/cm/prebuilt/common/app/CN/lib/arm/libjni_mosaic_next.so:system/priv-app/CameraNext/lib/arm/libjni_mosaic_next.so \
     vendor/cm/prebuilt/common/app/CN/lib/arm/libjni_tinyplanet_next.so:system/priv-app/CameraNext/lib/arm/libjni_tinyplanet_next.so
 
@@ -147,10 +146,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
    vendor/cm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/cm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
-=======
+
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
->>>>>>> 827bd9eb0af8b3631003a0736c666dbc55569d84
 
 # Theme engine
 include vendor/cm/config/themes_common.mk
