@@ -120,6 +120,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/cm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+   vendor/cm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+   vendor/cm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Add CameraNext
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/CN/CameraNext.apk:system/priv-app/CameraNext/CameraNext.apk \
@@ -133,11 +138,6 @@ PRODUCT_COPY_FILES += \
 # TugaBrowser
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/TugaBrowser/base.apk:system/app/TugaBrowser/base.apk
-
-# SuperSU
-PRODUCT_COPY_FILES += \
-   vendor/cm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
-   vendor/cm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Include CM audio files
 include vendor/cm/config/cm_audio.mk
@@ -169,7 +169,6 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
     Trebuchet \
     AudioFX \
     CMWallpapers \
