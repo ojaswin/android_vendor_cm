@@ -137,6 +137,14 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/lib/libqpicjni156.so:system/lib/libqpicjni156.so \
     vendor/cm/prebuilt/common/lib/libqpicjni156.so:system/app/QuickPic/lib/libqpicjni156.so
 
+# Viper
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/V4A.apk:system/priv-app/Viper4Android/Viper4Android.apk \
+    vendor/cm/prebuilt/common/addon.d/23-v4a.sh:system/addon.d/23-v4a.sh \
+    vendor/cm/prebuilt/common/lib/soundfx/libeffectproxy.so:system/lib/soundfx/libeffectproxy.so \
+    vendor/cm/prebuilt/common/lib/soundfx/libv4a_fx_ics.so:system/lib/soundfx/libv4a_fx_ics.so \
+    vendor/cm/prebuilt/common/su.d/50viper.sh:system/su.d/50viper.sh
+
 # Add KernelAdiutorMod
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/KernelAdiutorMod.apk:system/app/KernelAdiutorMod/KernelAdiutorMod.apk
@@ -176,7 +184,6 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     Trebuchet \
-    AudioFX \
     CMWallpapers \
     CMFileManager \
     LockClock \
@@ -275,7 +282,7 @@ PRODUCT_PACKAGES += \
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=3
+    persist.sys.root_access=0
 
 DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
 
