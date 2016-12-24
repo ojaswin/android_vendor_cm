@@ -131,6 +131,12 @@ PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/CN/lib/arm/libjni_mosaic_next.so:system/priv-app/CameraNext/lib/arm/libjni_mosaic_next.so \
     vendor/cm/prebuilt/common/app/CN/lib/arm/libjni_tinyplanet_next.so:system/priv-app/CameraNext/lib/arm/libjni_tinyplanet_next.so
 
+# Add QuickPic
+PRODUCT_COPY_FILES += \
+    vendor/cm/prebuilt/common/app/QuickPic.apk:system/app/QuickPic/QuickPic.apk \
+    vendor/cm/prebuilt/common/lib/libqpicjni156.so:system/lib/libqpicjni156.so \
+    vendor/cm/prebuilt/common/lib/libqpicjni156.so:system/app/QuickPic/lib/libqpicjni156.so
+
 # Add KernelAdiutorMod
 PRODUCT_COPY_FILES += \
     vendor/cm/prebuilt/common/app/KernelAdiutorMod.apk:system/app/KernelAdiutorMod/KernelAdiutorMod.apk
